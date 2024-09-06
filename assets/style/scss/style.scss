@@ -215,8 +215,8 @@ li {
     position: absolute;
     top: 7px;
     right: 5px;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
     button {
       border: none;
       outline: none;
@@ -227,12 +227,13 @@ li {
       height: 35px;
       border-radius: 50%;
       background-color: #eee;
+      color: rgba(0, 0, 0, 0.8);
       &:hover {
         background: #fff;
       }
     }
     &.com {
-      width: 70px;
+      width: 80px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -241,10 +242,6 @@ li {
         font-size: 22px;
       }
     }
-  }
-  &:hover .action {
-    opacity: 1;
-    visibility: visible;
   }
 }
 
@@ -379,8 +376,8 @@ li {
         height: 28px;
       }
       &.com {
-        width: 70px;
-        button:first-child {
+        width: 60px;
+        a button:first-child {
           font-size: 18px;
         }
       }
