@@ -14,38 +14,14 @@ body {
   min-height: 100vh;
   background: #f0f2f5;
   user-select: none;
+  :first-child {
+    width: 100%;
+    max-width: 450px;
+    h1 {
+      font-size: 40px;
+    }
+  }
 }
-
-// .notification {
-//   text-align: center;
-//   margin-bottom: 10px;
-//   padding: 10px 30px;
-//   border-radius: 8px;
-//   color: #000;
-//   font-size: 18px;
-// }
-
-// .success {
-//   background-color: rgba(0, 255, 0, 0.3);
-// }
-
-// .danger {
-//   background-color: rgba(255, 0, 0, 0.3);
-// }
-
-// .container {
-//   width: 500px;
-//   padding: 20px 0 20px 20px;
-//   border-radius: 8px;
-//   border: 1.5px solid #999;
-//   background: #fff;
-//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-//   h4 {
-//     font-size: 30px;
-//     text-align: center;
-//     letter-spacing: 1.2px;
-//   }
-// }
 
 .addInput {
   width: 100%;
@@ -55,6 +31,7 @@ body {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  //   background-color: red;
   input {
     width: 88%;
     height: 50px;
