@@ -3,9 +3,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
@@ -19,38 +16,38 @@ body {
   user-select: none;
 }
 
-.notification {
-  text-align: center;
-  margin-bottom: 10px;
-  padding: 10px 30px;
-  border-radius: 8px;
-  color: #000;
-  font-size: 18px;
-}
+// .notification {
+//   text-align: center;
+//   margin-bottom: 10px;
+//   padding: 10px 30px;
+//   border-radius: 8px;
+//   color: #000;
+//   font-size: 18px;
+// }
 
-.success {
-  background-color: rgba(0, 255, 0, 0.3);
-}
+// .success {
+//   background-color: rgba(0, 255, 0, 0.3);
+// }
 
-.danger {
-  background-color: rgba(255, 0, 0, 0.3);
-}
+// .danger {
+//   background-color: rgba(255, 0, 0, 0.3);
+// }
 
-.container {
-  width: 500px;
-  padding: 20px 0 20px 20px;
-  border-radius: 8px;
-  border: 1.5px solid #999;
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-h4 {
-  font-size: 30px;
-  text-align: center;
-  letter-spacing: 1.2px;
-}
+// .container {
+//   width: 500px;
+//   padding: 20px 0 20px 20px;
+//   border-radius: 8px;
+//   border: 1.5px solid #999;
+//   background: #fff;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+//   h4 {
+//     font-size: 30px;
+//     text-align: center;
+//     letter-spacing: 1.2px;
+//   }
+// }
 
-.container .addInput {
+.addInput {
   width: 100%;
   padding-right: 20px;
   margin-top: 20px;
@@ -58,9 +55,6 @@ h4 {
   justify-content: space-between;
   align-items: center;
   position: relative;
-}
-
-.addInput {
   input {
     width: 88%;
     height: 50px;
@@ -98,16 +92,18 @@ h4 {
     outline: none;
     opacity: 0.5;
   }
-  &.active {
+  .addTask.active {
     pointer-events: auto;
     opacity: 1;
   }
-  &.saveTask {
+  .saveTask {
     opacity: 1;
     pointer-events: auto;
     font-size: 25px;
   }
 }
+
+/*  */
 
 .btns_filter {
   padding-right: 20px;
@@ -182,7 +178,6 @@ h4 {
   .pendingTodos {
     .todoList {
       padding: 1px;
-      padding-right: 21px;
       ul li {
         border-bottom: 3px solid red;
       }
@@ -190,26 +185,27 @@ h4 {
   }
 }
 
-.todoList.overflow {
-  overflow-y: auto;
-  max-height: 320px;
-  padding-right: 1px;
-}
+/* Estilo do scroll */
+.todoList {
+  &.overflow {
+    overflow-y: auto;
+    max-height: 320px;
+    padding-right: 1px;
+  }
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 25px;
+  }
 
-.todoList::-webkit-scrollbar {
-  width: 20px;
-}
-
-.todoList::-webkit-scrollbar-track {
-  background: #fff;
-  border-radius: 25px;
-}
-
-.todoList::-webkit-scrollbar-thumb {
-  background: #1877f2;
-  border-radius: 25px;
-  border: 6px solid #fff;
-}
+  &::-webkit-scrollbar-thumb {
+    background: #1877f2;
+    border-radius: 25px;
+    border: 6px solid #fff;
+  }
+} /* fim estilo do scrol */
 
 ul li {
   position: relative;
@@ -233,45 +229,42 @@ ul li {
   border-bottom: 3px solid green;
 }
 
-li .action {
-  position: absolute;
-  top: 7px;
-  right: 5px;
-  opacity: 0;
-  visibility: hidden;
-}
-
-li:hover .action {
-  opacity: 1;
-  visibility: visible;
-}
-
-.action button {
-  border: none;
-  outline: none;
-  font-size: 18px;
-  line-height: 18px;
-  cursor: pointer;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background-color: #eee;
-}
-
-.action button:hover {
-  background: #fff;
-}
-
-.action.com {
-  width: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-.action.com button:first-child {
-  font-size: 22px;
+li {
+  .action {
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    opacity: 0;
+    visibility: hidden;
+    button {
+      border: none;
+      outline: none;
+      font-size: 18px;
+      line-height: 18px;
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: #eee;
+      &:hover {
+        background: #fff;
+      }
+    }
+    &.com {
+      width: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      button:first-child {
+        font-size: 22px;
+      }
+    }
+  }
+  &:hover .action {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .footer {
@@ -281,22 +274,20 @@ li:hover .action {
   align-items: center;
   margin-top: 18px;
   padding-right: 20px;
-}
-
-.footer button {
-  padding: 10px 12px;
-  font-size: 16px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  pointer-events: none;
-  background: #1877f2;
-  border-radius: 5px;
-  color: #fff;
-  opacity: 0.5;
-}
-
-.footer button.active {
-  opacity: 1;
-  pointer-events: auto;
+  button {
+    padding: 10px 12px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    pointer-events: none;
+    background: #1877f2;
+    border-radius: 5px;
+    color: #fff;
+    opacity: 0.5;
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
 }
