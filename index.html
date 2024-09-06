@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="/assets/style/css/style.css" />
+    <title>ToDo-list-local-storage</title>
+  </head>
+  <body>
+    <div>
+      <div class="container"></div>
+      <h4>ToDo List</h4>
+      <div class="addInput">
+        <input
+          type="text"
+          class="addInputField"
+          placeholder="Adicione uma nova tarefa..."
+          required
+        />
+        <input type="hidden" name="" class="editInputField" />
+        <i class="fa-solid fa-pen"></i>
+        <button class="addTask">+</button>
+        <button class="saveTask" style="display: none">
+          <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+      </div>
+
+      <div class="btns_filter">
+        <div class="btns">
+          <button class="active">Pendente</button>
+          <button class="complete">Completa</button>
+          <div class="showChange"></div>
+        </div>
+
+        <div class="filter">
+          <input
+            type="text"
+            name=""
+            id="penTaskFilter"
+            placeholder="filtrar..."
+            onkeyup="filterPenTask()"
+          />
+          <input
+            type="text"
+            name=""
+            id="comTaskFilter"
+            placeholder="Filtrar..."
+            style="display: none"
+            onkeyup="filterCompleteTask()"
+          />
+        </div>
+      </div>
+
+      <div class="todosContainer">
+        <div class="pendingTodos" style="display: block">
+          <ul class="todoList pending">
+            <!-- <li>Estudar CSS.<div class="action"><button><i class="fa-solid fa-pen-to-square"></i></button><button><i class="fa-regular fa-square-check"></i></button><button><i class="fa-solid fa-trash"></i></button></div></li> -->
+          </ul>
+
+          <div class="footer penTodos">
+            <span
+              >Você tem <span class="pendingNum">0</span> tarefas
+              pendentes.</span
+            >
+            <button>Limpar todos</button>
+          </div>
+        </div>
+
+        <div class="completeTodos" style="display: none">
+          <ul class="todoList completeTask">
+            <!-- <li>Estudar JS.<div class="action com"><button><i class="fa-solid fa-xmark"></i></button><button><i class="fa-solid fa-trash"></i></button></div></li> -->
+          </ul>
+
+          <div class="footer comTodos">
+            <span
+              >Você completou <span class="completeNum">0</span> tarefas.</span
+            >
+            <button>Limpar todos</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
