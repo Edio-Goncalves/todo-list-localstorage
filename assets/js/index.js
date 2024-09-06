@@ -11,21 +11,10 @@ let addTaskBtn = document.querySelector(".addTask");
 let saveTaskBtn = document.querySelector(".saveTask");
 let pending = document.querySelector(".pending");
 let completeTasks = document.querySelector(".completeTask");
-let notification = document.querySelector(".notification");
 let deleteAllPenTodos = document.querySelector(".penTodos button");
 let deleteAllComTodos = document.querySelector(".comTodos button");
 let pendingNum = document.querySelector(".pendingNum");
 let completeNum = document.querySelector(".completeNum");
-
-// Exibição de notificações
-// function showNotification(text, id) {
-//   notification.textContent = text;
-//   notification.classList.add(`${id}`);
-//   setTimeout(() => {
-//     notification.textContent = "";
-//     notification.classList.remove(`${id}`);
-//   }, 1500);
-// }
 
 // Alternância entre pendentes e concluídas
 btns[0].addEventListener("click", () => {
@@ -77,7 +66,6 @@ addTaskBtn.onclick = () => {
   localStorage.setItem("Pending Todos", JSON.stringify(listArr));
   showtask();
   addTaskBtn.classList.remove("active");
-  //   showNotification("ToDo foi adicionado com sucesso", "success");
 };
 
 // Exibe pendentes
@@ -113,7 +101,6 @@ function deleteTask(index) {
     listArr.splice(index, 1);
     localStorage.setItem("Pending Todos", JSON.stringify(listArr));
     showtask();
-    // showNotification("A tarefa foi excluída com sucesso", "danger");
   }
 }
 
@@ -122,7 +109,6 @@ deleteAllPenTodos.addEventListener("click", () => {
   if (confirm("Are you sure want to delete all pending tasks?")) {
     localStorage.setItem("Pending Todos", JSON.stringify([]));
     showtask();
-    // showNotification("Excluídas todas as tarefas pendentes com sucesso", "danger");
   }
 });
 
@@ -147,7 +133,6 @@ saveTaskBtn.addEventListener("click", () => {
   addInputField.value = "";
   addTaskBtn.classList.remove("active");
   showtask();
-  //   showNotification("A tarefa foi editada com sucesso", "success");
 });
 
 // Marca como concluída
@@ -163,7 +148,6 @@ function completeTask(index) {
   comArr.push(completedTask[0]);
   localStorage.setItem("Complete Todos", JSON.stringify(comArr));
   showCompleteTask();
-  //   showNotification("Tarefa concluída com sucesso", "success");
 }
 
 // Exibe concluídas
@@ -193,7 +177,6 @@ function comDeleteTask(index) {
     comArr.splice(index, 1);
     localStorage.setItem("Complete Todos", JSON.stringify(comArr));
     showCompleteTask();
-    // showNotification("Tarefa excluída das tarefas concluídas", "danger");
   }
 }
 
@@ -202,7 +185,6 @@ deleteAllComTodos.addEventListener("click", () => {
   if (confirm("Are you sure want to delete all completed tasks?")) {
     localStorage.setItem("Complete Todos", JSON.stringify([]));
     showCompleteTask();
-    // showNotification("Excluiu todas as tarefas concluídas", "danger");
   }
 });
 
